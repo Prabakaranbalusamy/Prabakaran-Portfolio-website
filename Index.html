@@ -7,6 +7,7 @@
     <title>Portfolio Website</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="Index.css">
@@ -14,15 +15,29 @@
 </head>
 
 <body>
+    <div  id="mobileHeader" class="mobile-header nav-links mx-auto ms-5 " >
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#Projects">Projects</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <svg id="closebtn" class="closebtn" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+        <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+        </svg>
+    </div>
     <header class="header">
         <div class="container ">
             <div class="row ">
-                <div class="col-4 ">
-                    <div class="logo"> Prabakaran </div>
+                <div class="col-3 ">
+                    <a href="#" class="logo"><img
+                            src="https://res.cloudinary.com/dxejj0dhb/image/upload/v1780991185/ChatGPT_Image_Jun_9_2026_01_14_33_PM_nazlcy.png"
+                            alt="Prabakaran Logo" class="logo"></a>
                 </div>
-                <div class="col-8 ">
-                    <nav class="navbar d-flex d-flex d-none d-lg-flex justify-content-end" id="navbar">
-                        <ul class="nav-links">
+                <div class="col-6 d-flex ">
+                    <nav class="navbar d-flex d-none d-lg-flex justify-content-center align-items-center" id="navbar">
+                        <ul class="nav-links mx-auto ms-5 ">
                             <li><a href="#home">Home</a></li>
                             <li><a href="#Projects">Projects</a></li>
                             <li><a href="#about">About</a></li>
@@ -30,6 +45,13 @@
                             <li><a href="#contact">Contact</a></li>
                         </ul>
                     </nav>
+                </div>
+                <div class="col-3 d-flex justify-content-end align-items-center ">
+                    <svg class="hamburger" id="mobileHamburger" xmlns="http://www.w3.org/2000/svg" width="16"
+                        height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+                    </svg>
                 </div>
             </div>
         </div>
@@ -41,12 +63,12 @@
                     <div class="col-12 col-md-6">
                         <div class="hero-content">
                             <bdi class="name-head">PRABAKARAN BALUSAMY</bdi>
-                            <h1 class="para">Hello, I'm <span id="typing-text">Web Developer</span></h1>
+                            <h1 class="para">Hello, I am <br /><span id="typing-text">Web Developer</span></h1>
                             <h2>Building Modern & Responsive Websites</h2>
                             <p>Frontend Developer with 1.3 year of experience. and Passionate about
                                 creating modern, responsive and user-friendly websites.</p>
                             <div class="hero-buttons mb-3">
-                                <a href="#Projects" class="btn-primary">View Projects</a>
+                                <a href="https://joshautomation.com/" class="btn-primary">View Projects</a>
                                 <a href="https://drive.google.com/file/d/1NbUHI-A_arOWouTADR61mzsNW-9UGUQP/view?usp=drive_link"
                                     class="btn-secondary">Download CV</a>
                             </div>
@@ -170,6 +192,9 @@
                 <a href="https://linkedin.com/in/prabakaran-balusamy-742648314/" target="_blank">LinkedIn</a>
             </div>
         </section>
+        <a href="https://wa.me/916379883629" class="whatsapp-btn" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
     </main>
     <footer class="footer">
         <div class="footer-social">
@@ -190,6 +215,7 @@
     </footer>
     <script src="/index.js"></script>
 </body>
+
 </html>
 </body>
 

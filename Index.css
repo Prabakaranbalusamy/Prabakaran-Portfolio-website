@@ -13,12 +13,17 @@ p{
     font-family: "arima";
 }
 /* header section */
+.logo{
+    width:80px;
+    height:80px;
+    border-radius:50%;
+}
 
 .header{
     width:100%;
     position:fixed;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     z-index:1000;
     background:rgba(255,255,255,0.95);
     backdrop-filter:blur(10px);
@@ -48,9 +53,37 @@ p{
 }
 
 .hamburger{
-    display:none;
-    font-size:30px;
-    cursor:pointer;
+   height: 50px;
+   width: 50px;
+}
+
+.mobile-header{
+    display: none;
+    position: absolute;
+    z-index: 9999;
+    width: 100%;
+    background-color: white;
+    transition: 0.5 ease;
+    list-style-type: none;
+}
+.mobile-header ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-header ul li{
+    margin: 20px 0;
+    text-align: center;
+}
+
+#closebtn{
+    cursor: pointer;
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    top: 20px;
+    right: 50px;
 }
 
 /* main section / hero section */
@@ -585,4 +618,28 @@ p{
     .hero-content h1{
       font-size: 20px;
     }
+}
+.whatsapp-btn{
+    position: fixed;
+    bottom: 20px;
+    right: 60px;
+    font-size: 40px;
+    color: #25D366;
+    z-index: 1000;
+}
+
+#typing-text {
+  color: #ffc107;
+  font-weight: 900;
+}
+
+#typing-text::after {
+  content: "|";
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
 }

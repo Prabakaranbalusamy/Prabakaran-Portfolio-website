@@ -1,47 +1,51 @@
-const hamburger = document.getElementById("hamburger");
-const navLinks = document.getElementById("navLinks");
-
-hamburger.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-});
-
 const texts = [
-   "Junior Web Developer",
-   "Front End Developer",
-   "UI Developer",
-  
+    "Frontend Developer",
+    "Web Developer",
+    "UI Developer",
+
 ];
 
 let textIndex = 0;
 let charIndex = 0;
-let isDeleting = false;
 
-const typingText = document.getElementById("typing-text");
-
-function typeEffect() {
-
-    const currentText = texts[textIndex];
-
-    if (!isDeleting) {
-        typingText.textContent = currentText.substring(0, charIndex + 1);
+function typeText() {
+    if (charIndex < texts[textIndex].length) {
+        document.getElementById("typing-text").textContent += texts[textIndex].charAt(charIndex);
         charIndex++;
-
-        if (charIndex === currentText.length) {
-            isDeleting = true;
-            setTimeout(typeEffect, 1500);
-            return;
-        }
+        setTimeout(typeText, 100);
     } else {
-        typingText.textContent = currentText.substring(0, charIndex - 1);
-        charIndex--;
-
-        if (charIndex === 0) {
-            isDeleting = false;
-            textIndex = (textIndex + 1) % texts.length;
-        }
+        setTimeout(eraseText, 1500);
     }
-
-    setTimeout(typeEffect, isDeleting ? 50 : 100);
 }
 
-typeEffect();
+function eraseText() {
+    if (charIndex > 0) {
+        document.getElementById("typing-text").textContent =
+            texts[textIndex].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(eraseText, 50);
+    } else {
+        textIndex = (textIndex + 1) % texts.length;
+        setTimeout(typeText, 500);
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    typeText();
+});
+
+// navbar list d-none d-block section //
+let hamburger = document.getElementById("mobileHamburger");
+let navbar = document.getElementById("mobileHeader");
+let closeBtn = document.getElementById("closebtn")
+
+console.log(hamburger);
+
+hamburger.onclick = () => {
+    navbar.classList.remove("d-none");
+    navbar.classList.add("d-block");
+}
+closeBtn.onclick = () => {
+    navbar.classList.add("d-none");
+    navbar.classList.remove("d-block");
+}
